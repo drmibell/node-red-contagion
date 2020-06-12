@@ -46,10 +46,19 @@ where
  - _rho_ = 1/_H_
  - _alpha_ = fatality rate
 
+Consensus values in the COVID-19 literature seem to be approximately: _R0_ = 2.5, _D_ = 6 days, _I_ = 2 days, _H_ = 14 days, _alpha_ = 0.05 - 0.1
 
+**Note**: _alpha_ is not equal to the conventional infection fatality rate, _IFR_. The two are related by
+<div align="center">
 
+_alpha_ = _H_ / (_D_ / _IFR_ - _D_ + _H_).
+</div>
 
-Consensus values in the literature seem to be: _R0_ = 2.5, _D_ = 6 days, _I_ = 2 days, _H_ = 14 days, _alpha_ = 0.05 - 0.1
+If _IFR_ << 1, then to a good approximation,
+<div align="center">
+
+_alpha_ ≈ _IFR_ * _H_ / _D_, or _IFR_ ≈ _D_ * _alpha_ / _H_.
+</div>
 
 ### Node-RED Flow Tabs
 **Contagion Models**: allows the user to compare the results of two models, with the type and parameters selected independently.
